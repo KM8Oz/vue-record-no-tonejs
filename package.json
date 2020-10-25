@@ -1,6 +1,6 @@
 {
-  "name": "@codekraft-studio/vue-record",
-  "version": "0.0.3",
+  "name": "vue-recorder-no-tonejs",
+  "version": "0.0.4",
   "main": "dist/VueRecord.umd.js",
   "scripts": {
     "prepublishOnly": "npm run build",
