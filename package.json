@@ -14,8 +14,6 @@
     "dist"
   ],
   "dependencies": {
-    "startaudiocontext": "^1.2.1",
-    "tone": "^13.8.25",
     "vue": "^2.0"
   },
   "devDependencies": {
