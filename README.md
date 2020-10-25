@@ -11,14 +11,14 @@ Checkout the [demo](https://codekraft-studio.github.io/vue-record/) to see it in
 Download the project using your favourite package manager:
 
 ```
-npm install @codekraft-studio/vue-record
+npm i vue-recorder-no-tonejs
 ```
 
 Load it inside your project and use it:
 
 ```js
 import Vue from 'vue'
-import VueRecord from '@codekraft-studio/vue-record'
+import VueRecord from 'vue-recorder-no-tonejs'
 
 Vue.use(VueRecord)
 ```
