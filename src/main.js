@@ -3,7 +3,7 @@ import App from './App.vue'
 
 import VueRecord from './components/index'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
 
 Vue.use(VueRecord)
 
