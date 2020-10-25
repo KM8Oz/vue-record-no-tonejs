@@ -1,11 +1,11 @@
 import { loadScripts } from "./loadScripts";
 
-import StartAudioContext from "startaudiocontext";
-import Tone from "tone";
+// import StartAudioContext from "startaudiocontext";
+// import Tone from "tone";
 
 // https://github.com/Tonejs/Tone.js/issues/341
 // https://github.com/tambien/StartAudioContext
-StartAudioContext(Tone.context);
+// StartAudioContext(Tone.context);
 
 export default {
   methods: {
@@ -19,7 +19,7 @@ export default {
         await this.prepareRecorder();
 
         this.$_mediaRecorder.start();
-        Tone.Transport.start();
+//         Tone.Transport.start();
       } catch (e) {
         this.$emit("error", e);
         // eslint-disable-next-line
@@ -34,7 +34,7 @@ export default {
       this.$_stream.getTracks().forEach(t => t.stop());
       this.$_mic.close();
 
-      Tone.Transport.stop();
+//       Tone.Transport.stop();
     },
 
     /**
@@ -42,25 +42,25 @@ export default {
      * to the parent component so he can use it for processing or show a preview
      */
     async getStream() {
-      // const stream = await navigator.mediaDevices.getUserMedia(this.constraints)
-      // this.$_stream = stream
+      const stream = await navigator.mediaDevices.getUserMedia(this.constraints)
+      this.$_stream = stream
 
       // you probably DONT want to connect the microphone
       // directly to the master output because of feedback.
-      this.$_mic = new Tone.UserMedia();
-      this.debug && console.log("tonejs microphone instance", this.$_mic);
+//       this.$_mic = new Tone.UserMedia();
+//       this.debug && console.log("tonejs microphone instance", this.$_mic);
 
-      await this.$_mic.open();
-      this.debug && console.log("mic is open", this.$_mic);
+//       await this.$_mic.open();
+//       this.debug && console.log("mic is open", this.$_mic);
 
-      const dest = Tone.context.createMediaStreamDestination();
-      this.debug && console.log("context.createMediaStreamDestination", dest);
+//       const dest = Tone.context.createMediaStreamDestination();
+//       this.debug && console.log("context.createMediaStreamDestination", dest);
 
-      this.$_mic.connect(dest);
-      this.debug && console.log("mic connected");
+//       this.$_mic.connect(dest);
+//       this.debug && console.log("mic connected");
 
-      this.$_stream = dest.stream;
-      this.$emit("stream", this.$_stream);
+//       this.$_stream = dest.stream;
+//       this.$emit("stream", this.$_stream);
 
       return this.$_stream;
     },
